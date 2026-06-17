@@ -1,0 +1,19 @@
+{
+  "overview": "A simple public picture board where anyone can upload and view images in a clean grid layout — no login required.",
+  "features": [
+    "Upload images via drag-and-drop or file picker",
+    "Responsive grid gallery of all uploaded pictures",
+    "Click any image to view full-size in a lightbox",
+    "Images persist across page reloads",
+    "Fully public — no login needed"
+  ],
+  "category": "showcase",
+  "tags": [
+    "images",
+    "gallery",
+    "picture-board",
+    "public",
+    "minimal"
+  ],
+  "last_updated": "2026-06-17T16:09:16.910Z"
+}

@@ -1,0 +1,16 @@
+type ImageId = nat;
+type ImageEntry = 
+ record {
+   data: blob;
+   id: ImageId;
+ };
+service : {
+  __images: (ko: opt ImageId, count: opt nat) ->
+   (vec record {
+          ImageId;
+          ImageEntry;
+        }) query;
+  __state: () -> (reserved) query;
+  listImages: () -> (vec ImageEntry) query;
+  uploadImage: (data: blob) -> (ImageId);
+}

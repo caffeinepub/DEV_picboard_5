@@ -1,0 +1,35 @@
+// Version: 4.0.0
+type Data__80296667<K, V> =
+  {var count : Nat__1040412405; kvs : [var ?(K, V)]};
+type ImageEntry__291060927 = {data : Blob; id : ImageId__163108877};
+type ImageEntry__51403639 = {data : Blob; id : ImageId__746944404};
+type ImageId__163108877 = Nat;
+type ImageId__746944404 = Nat;
+type Internal__41346355<K, V> =
+  {children : [var ?Node__1000929467<K, V>]; data : Data__80296667<K, V>};
+type Leaf__712614010<K, V> = {data : Data__80296667<K, V>};
+type Map__222667396<K, V> = Map__912772452<K, V>;
+type Map__709709801<K, V> =
+  {var root : Node__1000929467<K, V>; var size : Nat__1040412405};
+type Map__912772452<K, V> = Map__709709801<K, V>;
+type Nat__1040412405 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__101202290 =
+  {
+    images : Map__222667396<ImageId__746944404, ImageEntry__51403639>;
+    state : {var nextImageId : Nat}
+  };
+type Node__1000929467<K, V> =
+  {#internal : Internal__41346355<K, V>; #leaf : Leaf__712614010<K, V>};
+type OldActor__713245407 = {};
+{
+  "20260617_120000_InitImages" : OldActor__713245407 -> NewActor__101202290
+}
+actor  {
+  stable images :
+    {
+      var root : Node__1000929467<ImageId__163108877, ImageEntry__291060927>;
+      var size : Nat__1040412405
+    };
+  stable state : {var nextImageId : Nat}
+};

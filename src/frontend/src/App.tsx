@@ -1,0 +1,19 @@
+import Layout from "@/components/Layout";
+import BoardPage from "@/pages/BoardPage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 30_000, retry: 1 },
+  },
+});
+
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <BoardPage />
+      </Layout>
+    </QueryClientProvider>
+  );
+}
